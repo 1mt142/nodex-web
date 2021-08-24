@@ -1,0 +1,13 @@
+build/
+node_modules
+package-lock.json
+package.json
+README.md
+.gitignore
+public/
+VERSION
+nginx.conf
+Dockerfile
+.gitlab-ci.yml
+.prettierignore
+.eslintrc.json
