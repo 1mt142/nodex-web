@@ -9,7 +9,7 @@ import Loader from "../../components/Loader";
 
 function UserList() {
   const [isLoading, setLoading] = useState(false);
-  const [data, setData] = useState(null);
+  const [data, setData] = useState([]);
 
   const getUsers = () => {
     setLoading(true);
@@ -28,7 +28,7 @@ function UserList() {
   };
 
   useEffect(() => {
-    if (data === null) {
+    if (data !== null && data.length <= 1) {
       getUsers();
     }
   }, [data]);
@@ -48,7 +48,7 @@ function UserList() {
   return (
     <div>
       <Loader loading={isLoading} />
-      <DataTable title="User List" columns={columns} data={data} />
+      <DataTable title="User List" columns={columns} data={data} pagination />
     </div>
   );
 }
