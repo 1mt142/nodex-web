@@ -19,7 +19,8 @@ const publicRequest = axios.create({ baseURL: BASE_URL });
 publicRequest.interceptors.response.use(
   (res) => res.data,
   (error) => {
-    const originalErrorMessage = error.message || "Oops!!! Something Went Wrong !";
+    const originalErrorMessage =
+      error.message || "Oops!!! Something Went Wrong !";
     if (error.response && error.response.data) {
       const newError = error.response.data;
       if (!newError.message) {
@@ -41,14 +42,15 @@ const privateRequest = axios.create({
 });
 
 privateRequest.interceptors.request.use((req) => {
-  req.headers.Authorization = `b2b_portal ${getToken()}`;
+  req.headers.Authorization = `Bearer ${getToken()}`;
   return req;
 });
 
 privateRequest.interceptors.response.use(
   (res) => res.data,
   (error) => {
-    const originalErrorMessage = error.message || "Oops!!! Something Went Wrong !";
+    const originalErrorMessage =
+      error.message || "Oops!!! Something Went Wrong !";
     const originalRequest = error.config;
     const refreshToken = getRefreshToken();
     if (
@@ -63,9 +65,10 @@ privateRequest.interceptors.response.use(
       return axios
         .post(REFRESH_TOKEN, { token: refreshToken })
         .then((res) => {
-          setToken(res.data.token);
-          setRefreshToken(res.data.refresh_token);
-          originalRequest.headers.Authorization = `CM ${res.data.token}`;
+          console.log("res data", res);
+          setToken(res.tokens.access.token);
+          setRefreshToken(res.tokens.refresh.token);
+          originalRequest.headers.Authorization = `Bearer ${res.tokens.access.token}`;
           return axios(originalRequest);
         })
         .catch(() => {

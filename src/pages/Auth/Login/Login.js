@@ -59,7 +59,7 @@ const Login = () => {
                   <h4 className="font-26 m-b-5  pt-4">Welcome Back!</h4>
                   <p className="mb-4 font-16">
                     Sign in to continue to{" "}
-                    <strong className="font-weight-bold">Nodex Web</strong>
+                    <strong className="font-weight-bold">Test-Web</strong>
                   </p>
                 </LoginCardTitle>
                 <LoginForm handleFormSubmit={handleLoginFormSubmit} />

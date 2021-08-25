@@ -15,9 +15,13 @@ import Dashboard from "./pages/Dashboard/Dashboard";
 import Login from "./pages/Auth/Login/Login";
 import Logout from "./pages/Auth/Logout/Logout";
 import ResetPassword from "./pages/Auth/ResetPassword";
+import UserList from "./pages/Users/UserList";
+import BlogList from "./pages/Blogs/BlogList";
 
 const routes = [
   { path: "/dashboard", layout: PrivateLayout, component: Dashboard },
+  { path: "/users", layout: PrivateLayout, component: UserList },
+  { path: "/blogs", layout: PrivateLayout, component: BlogList },
   { path: "/reset-password/:username", component: ResetPassword },
   { path: "/logout", component: Logout },
   { path: "/login", component: Login },

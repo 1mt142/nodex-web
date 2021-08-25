@@ -49,6 +49,7 @@ export const setRefreshToken = (token) => {
  */
 export const getRefreshToken = () => {
   const token = localStorage.getItem("refreshtoken") || null;
+  console.log(token);
   return token;
 };
 

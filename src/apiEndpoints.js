@@ -17,3 +17,6 @@ export const REFRESH_TOKEN = "user/login/token-refresh/";
 export const USER_SET_PASSWORD = "user/reset-password/";
 
 // Reports
+
+export const GET_USERS = "/v1/users";
+export const GET_BLOGS = "/v1/blogs";

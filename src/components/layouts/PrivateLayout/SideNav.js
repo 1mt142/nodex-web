@@ -25,6 +25,28 @@ const SideNav = () => {
               <span> Dashboard </span>
             </NavLink>
           </li>
+          <li>
+            <NavLink
+              activeClassName="mm-active"
+              to="/users"
+              className="waves-effect"
+            >
+              <FontAwesomeIcon icon="home" />
+              <span> User </span>
+            </NavLink>
+          </li>
+
+          <li>
+            <NavLink
+              activeClassName="mm-active"
+              to="/blogs"
+              className="waves-effect"
+            >
+              <FontAwesomeIcon icon="home" />
+              <span> Blogs </span>
+            </NavLink>
+          </li>
+
           {/* {hasPermission("can_view_lanka_bangla_report") && (
             <li>
               <NavLink
